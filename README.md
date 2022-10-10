@@ -1,4 +1,4 @@
-# ExpenseT Tracker
+# Expense Tracker
 A versatile budget application that allows a user to add expenses to a category and consequentially track expenses per category.
 
 ## Built With
