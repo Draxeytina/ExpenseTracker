@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @group %>
 
+<div class="group-show-btns">
+  <button class="btn"><%= link_to "Edit Category", edit_group_path(@group), class:'group-links btn' %></button>
+  <%= button_to "Destroy Category", @group, method: :delete, class:'btn red' %>
+  <button class="btn"><%= link_to "Go Back", groups_path, class:'group-links btn' %></button>
+</div>
+<hr>
 <div>
-  <%= link_to "Edit this group", edit_group_path(@group) %> |
-  <%= link_to "Back to groups", groups_path %>
+  <h1 class='transaction-heading'>Transactions<h1>
+  <div class="card-list">
+    <%= render @group.settlements.order(created_at: :desc) %>
+  </div>
 
-  <%= button_to "Destroy this group", @group, method: :delete %>
+  <%= link_to "New Transaction", new_group_settlement_path(@group), class: "log-in-2" %>
 </div>

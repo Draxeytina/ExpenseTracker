@@ -12,6 +12,15 @@
   <% end %>
 
   <div>
-    <%= form.submit %>
+    <%= form.text_field :name, value: @group.name, placeholder: "Name", required: true, class: "field" %>
+  </div>
+
+  <div class="select_icon">
+    <%= form.label :icon, 'Select Icon:', class: "field" %>
+    <%= form.select :icon, ["🎉","🎁","🍼","✈️","🎮","👞","👔","🎵", "📚", "🏥", "🏈", "🎬"], value: @group.icon, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class:'log-in-2' %>
   </div>
 <% end %>
