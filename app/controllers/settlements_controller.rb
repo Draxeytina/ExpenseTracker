@@ -1,4 +1,5 @@
 class SettlementsController < ApplicationController
+  before_action :set_group, only: %i[new create edit update destroy]
   before_action :set_settlement, only: %i[ show edit update destroy ]
 
   # GET /settlements or /settlements.json
@@ -22,10 +23,12 @@ class SettlementsController < ApplicationController
   # POST /settlements or /settlements.json
   def create
     @settlement = Settlement.new(settlement_params)
+    @settlement.group_id = @group.id
+    @settlement.user_id = current_user.id
 
     respond_to do |format|
       if @settlement.save
-        format.html { redirect_to settlement_url(@settlement), notice: "Settlement was successfully created." }
+        format.html { redirect_to @group, notice: "Settlement was successfully created." }
         format.json { render :show, status: :created, location: @settlement }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +41,7 @@ class SettlementsController < ApplicationController
   def update
     respond_to do |format|
       if @settlement.update(settlement_params)
-        format.html { redirect_to settlement_url(@settlement), notice: "Settlement was successfully updated." }
+        format.html { redirect_to @group, notice: "Settlement was successfully updated." }
         format.json { render :show, status: :ok, location: @settlement }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -63,8 +66,12 @@ class SettlementsController < ApplicationController
       @settlement = Settlement.find(params[:id])
     end
 
+    def set_group
+      @group = Group.find(params[:group_id])
+    end
+
     # Only allow a list of trusted parameters through.
     def settlement_params
-      params.fetch(:settlement, {})
+      params.require(:settlement).permit(:name, :amount).merge(user_id: current_user.id)
     end
 end

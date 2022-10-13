@@ -1,4 +1,4 @@
-<%= form_with(model: settlement) do |form| %>
+<%= form_with(model: [@group, @settlement]) do |form| %>
   <% if settlement.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(settlement.errors.count, "error") %> prohibited this settlement from being saved:</h2>
@@ -11,7 +11,17 @@
     </div>
   <% end %>
 
+  <h2>Category: <%= @group.name %></h2>
+
   <div>
-    <%= form.submit %>
+    <%= form.text_field :name, placeholder: 'Name', class:'field' %>
+  </div>
+
+  <div>
+    <%= form.text_field :amount, placeholder: 'Amount', class:'field' %>
+  </div>
+
+  <div>
+    <%= form.submit "Save", class:'log-in-2' %>
   </div>
 <% end %>
