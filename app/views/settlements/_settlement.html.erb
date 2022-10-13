@@ -1,0 +1,6 @@
+ <%= link_to edit_group_settlement_path(@group, settlement), class:"card_link" do %>
+  <div class="settlement-card">
+    <p class='color'><%= settlement.name %></p>
+    <p class='color'>Cost: $<%= settlement.amount %></p>
+  </div>
+<% end %>

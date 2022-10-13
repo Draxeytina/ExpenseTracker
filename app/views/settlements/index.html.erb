@@ -1,0 +1,12 @@
+<h1>Settlements</h1>
+
+<div id="settlements">
+  <% @settlements.each do |settlement| %>
+    <%= render settlement %>
+    <p>
+      <%= link_to "Show this settlement", settlement %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New settlement", new_settlement_path %>
