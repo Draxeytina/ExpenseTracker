@@ -34,6 +34,9 @@ I would like to acknowledge the following for making this a success:
 - My coding partners
 - The Microverse code reviewers
 
+>Note
+>> Original interface design by <a href="https://www.behance.net/gregoirevella">Gregoire Vella on Behance</a>
+
 ## 📝 License
 
 This project is [MIT](https://github.com/Draxeytina/ExpenseTracker/MIT.md) licensed.

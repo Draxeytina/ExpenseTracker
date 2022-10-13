@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class='navbar'>
+    <div>
+      <%if current_user%>
+      <% if current_page?(groups_path) %>
+        <%= link_to root_path, class:"nav-btn" do %>
+          <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+        <% end %>
+
+      <% else %>
+        <% if @group %>
+          <% if @group.id == nil && current_page?(new_group_path) %>
+            <%= link_to groups_path, class:"nav-btn" do %>
+            <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+            <% end %>
+          <% end %>
+
+          <% if @group.id != nil && current_page?(group_path(@group)) %>
+            <%= link_to groups_path, class:"nav-btn" do %>
+              <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+            <% end %>
+          <% end %>
+
+          <% if @group.id != nil && current_page?(edit_group_path(@group)) %>
+            <%= link_to group_path(@group), class:"nav-btn" do %>
+              <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+            <% end %>
+          <% end %>
+        <% end %>
+
+        <% if @settlement && @group %>
+          <% if @settlement.id == nil && current_page?(new_group_settlement_path(@group)) %>
+            <%= link_to group_path(@group), class:"nav-btn" do %>
+              <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+            <% end %>
+          <% end %>
+
+          <% if @settlement.id != nil && current_page?(edit_group_settlement_path(@group, @settlement)) %>
+            <%= link_to group_path(@group), class:"nav-btn" do %>
+              <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+            <% end %>
+          <% end %>
+        <% end %>
+        
+      <% end %>
+
+      <% else %>
+        <%= link_to root_path, class:"nav-btn" do %>
+          <span class=iconify><iconify-icon icon="eva:arrow-back-fill"></iconify-icon></span>
+        <% end %>
+      <%end%>
+    </div>
+
+    <h2 class='nav-login'>
+
+      <% if current_page?(root_path) && current_user %>
+        Welcome <%= current_user.name %>!
+      <% end %>
+
+      <% if current_page?(new_user_session_path) || current_page?(new_user_registration_path) || current_page?(new_user_password_path) %>
+        Expense Tracker
+      <% end %>
+
+      <% if current_page?(root_path) && current_user == nil %>
+        Expense Tracker
+      <% end %>
+
+      <% if @group %>
+        <% if @group.id == nil && current_page?(new_group_path) %>
+          Add New Category
+        <% end %>
+
+        <% if @group.id != nil && current_page?(group_path(@group)) %>
+          <%= @group.name.upcase %>
+        <% end %>
+
+        <% if @group.id != nil && current_page?(edit_group_path(@group)) %>
+          Edit Category
+        <% end %>
+      <% end %>
+
+      <% if @settlement && @group %>
+        <% if @settlement.id == nil && current_page?(new_group_settlement_path(@group)) %>
+          Add New Transaction
+        <% end %>
+
+        <% if @settlement.id != nil && current_page?(edit_group_settlement_path(@group, @settlement)) %>
+          Edit Transaction
+        <% end %>
+      <% end %>
+
+      <% if current_page?(groups_path) %>
+        Categories
+      <% end %>
+    </h2>
+
+    <div class="menu">
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <iconify-icon icon="charm:menu-hamburger" style="color: white;"></iconify-icon>
+      </a>
+    </div>
+</div>
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+    }
+  }
+
+  function myFunction2() {
+    var x = document.getElementById("myLinks");
+      x.style.display = "none";
+  }
+</script>

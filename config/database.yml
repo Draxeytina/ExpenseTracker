@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: ExpenseTracker_development
-  username: ExpenseTracker
+  username: postgres
   password: draxtina
 
   # The specified database role being used to connect to postgres.
@@ -58,7 +58,7 @@ development:
 test:
   <<: *default
   database: ExpenseTracker_test
-  username: ExpenseTracker
+  username: postgres
   password: draxtina
 
 # As with config/credentials.yml, you never want to store sensitive information,

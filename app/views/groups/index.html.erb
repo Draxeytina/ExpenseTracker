@@ -1,0 +1,9 @@
+<div id="groups">
+  <% @groups.each do |group| %>
+    <%= link_to group, class:'group-links' do %>
+      <%= render group %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Add New Category", new_group_path, class:'log-in-2' %>
