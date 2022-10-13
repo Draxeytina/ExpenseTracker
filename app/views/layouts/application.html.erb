@@ -8,11 +8,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
   </head>
 
   <body>
+    <%= render partial: 'layouts/navbar' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <ul id="myLinks" onclick="myFunction2()">
+      <%if current_user%>
+        <li>
+          <%= link_to "Categories", groups_path, class:'log-in-3' %>
+        </li>
+        <li>
+          <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:'sign-up-3' %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Log In", new_user_session_path, class:'log-in-3' %>
+        </li>
+        <li>
+          <%= link_to "Sign Up", new_user_registration_path, class:'sign-up-3' %>
+        </li>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
+  <% if current_page?(root_path) && current_user == nil %>
+    <footer>
+      <p class='foot-note'> Developed   by  <a href="https://github.com/Draxeytina" target="_blank" rel="noopener noreferrer">  Tinashe Timothy Murambinda</a></p>
+    </footer>
+  <% end %>
 </html>
