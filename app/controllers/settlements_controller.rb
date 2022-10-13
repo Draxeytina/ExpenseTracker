@@ -1,6 +1,6 @@
 class SettlementsController < ApplicationController
   before_action :set_group, only: %i[new create edit update destroy]
-  before_action :set_settlement, only: %i[ show edit update destroy ]
+  before_action :set_settlement, only: %i[show edit update destroy]
 
   # GET /settlements or /settlements.json
   def index
@@ -8,8 +8,7 @@ class SettlementsController < ApplicationController
   end
 
   # GET /settlements/1 or /settlements/1.json
-  def show
-  end
+  def show; end
 
   # GET /settlements/new
   def new
@@ -17,8 +16,7 @@ class SettlementsController < ApplicationController
   end
 
   # GET /settlements/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /settlements or /settlements.json
   def create
@@ -28,7 +26,7 @@ class SettlementsController < ApplicationController
 
     respond_to do |format|
       if @settlement.save
-        format.html { redirect_to @group, notice: "Settlement was successfully created." }
+        format.html { redirect_to @group, notice: 'Settlement was successfully created.' }
         format.json { render :show, status: :created, location: @settlement }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +39,7 @@ class SettlementsController < ApplicationController
   def update
     respond_to do |format|
       if @settlement.update(settlement_params)
-        format.html { redirect_to @group, notice: "Settlement was successfully updated." }
+        format.html { redirect_to @group, notice: 'Settlement was successfully updated.' }
         format.json { render :show, status: :ok, location: @settlement }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,23 +53,24 @@ class SettlementsController < ApplicationController
     @settlement.destroy
 
     respond_to do |format|
-      format.html { redirect_to settlements_url, notice: "Settlement was successfully destroyed." }
+      format.html { redirect_to settlements_url, notice: 'Settlement was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_settlement
-      @settlement = Settlement.find(params[:id])
-    end
 
-    def set_group
-      @group = Group.find(params[:group_id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_settlement
+    @settlement = Settlement.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def settlement_params
-      params.require(:settlement).permit(:name, :amount).merge(user_id: current_user.id)
-    end
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def settlement_params
+    params.require(:settlement).permit(:name, :amount).merge(user_id: current_user.id)
+  end
 end

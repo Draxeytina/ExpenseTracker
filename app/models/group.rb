@@ -7,6 +7,6 @@ class Group < ApplicationRecord
 
   def total_amount
     total = settlements.sum(:amount)
-    answer = '%.2f' % [(total * 100).round / 100.0]
+    format('%.2f', (total * 100).round / 100.0)
   end
 end

@@ -1,1 +1,1 @@
-json.partial! "settlements/settlement", settlement: @settlement
+json.partial! 'settlements/settlement', settlement: @settlement

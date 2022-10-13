@@ -9,7 +9,7 @@ RSpec.describe Settlement, type: :model do
 
   it 'is a valid creation' do
     user1 = User.create(name: 'tina', email: 'tina@new.com', password: 'tinashe')
-    group = Group.create(name: 'tina', icon: 'brown', user:user1)
+    group = Group.create(name: 'tina', icon: 'brown', user: user1)
     settlement = Settlement.new(name: 'tina', amount: 2, group:, user: user1)
     expect(settlement).to be_valid
   end

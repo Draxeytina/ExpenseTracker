@@ -2,7 +2,6 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe User, type: :request do
-
   describe 'GET /index' do
     before { get groups_path }
 
