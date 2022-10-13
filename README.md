@@ -6,6 +6,10 @@ A versatile budget application that allows a user to add expenses to a category 
 - Ruby on rails
 
 ## See Project 🌐
+https://frozen-atoll-99525.herokuapp.com/
+
+## Demonstration Video
+https://drive.google.com/file/d/1yefJ0G-9h43T3jL5pyWxG1ovX3UVSqW4/view?usp=sharing
 
 ## Getting Started
 You may setup the project on your local machine using the following steps:
