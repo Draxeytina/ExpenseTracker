@@ -1,7 +1,10 @@
 # Expense Tracker
 A versatile budget application that allows a user to add expenses to a category and consequentially track expenses per category.
 
-![image](https://user-images.githubusercontent.com/59999191/195688621-3afa5630-11db-4e32-aea9-90aa388a653b.png)
+![image](https://user-images.githubusercontent.com/59999191/195946026-0e4c162a-d580-47d6-b9af-33c752c1e645.png)![image](https://user-images.githubusercontent.com/59999191/195946356-4edabe12-0efe-4558-b145-4b488aedc43d.png)![image](https://user-images.githubusercontent.com/59999191/195946483-77fb0108-950f-4aff-9b09-7e38f93bccf0.png)
+
+
+
 
 ## Built With
 - Ruby
