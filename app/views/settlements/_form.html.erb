@@ -11,17 +11,17 @@
     </div>
   <% end %>
 
-  <h2>Category: <%= @group.name %></h2>
+  <h2 class="signup-header">Category: <%= @group.name %></h2>
 
   <div>
-    <%= form.text_field :name, placeholder: 'Name', class:'field' %>
+    <%= form.text_field :name, placeholder: 'Transaction name' %>
   </div>
 
   <div>
-    <%= form.text_field :amount, placeholder: 'Amount', class:'field' %>
+    <%= form.text_field :amount, placeholder: 'Amount', value:"#{@settlement.name == nil ? '' : @settlement.amount}" %>
   </div>
 
-  <div>
-    <%= form.submit "Save", class:'log-in-2' %>
+  <div class="add-group">
+    <%= form.submit "Save", class:'sign-up-2' %>
   </div>
 <% end %>
