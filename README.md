@@ -8,10 +8,10 @@ A versatile budget application that allows a user to add expenses to a category 
 - Ruby on rails
 
 ## See Project 🌐
-https://frozen-atoll-99525.herokuapp.com/
+<a href="https://frozen-atoll-99525.herokuapp.com/">Expense Tracker Live Demo</a>
 
 ## Demonstration Video
-https://drive.google.com/file/d/1yefJ0G-9h43T3jL5pyWxG1ovX3UVSqW4/view?usp=sharing
+<a href="https://drive.google.com/file/d/1vyjHmxMyO2qEgNlTB5S5qwbhC2lOJqg8/view?usp=sharing">Expense Tracker Tutorial</a>
 
 ## Getting Started
 You may setup the project on your local machine using the following steps:
