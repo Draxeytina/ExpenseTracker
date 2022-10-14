@@ -4,6 +4,11 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
+  validates :icon,
+  format: {
+    with: URI.regexp(%w[http https]),
+    message: 'image url is not a valid URL'
+  }
 
   def total_amount
     total = settlements.sum(:amount)
