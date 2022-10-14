@@ -35,8 +35,41 @@ footer {
   background-color: $secondary;
 }
 
+input {
+  padding: 1rem 0.5rem;
+  border: 1px solid #f1f1f1;
+  font-size: 1.3rem;
+  width: 90%;
+  margin-left: 5px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+a, button {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
 .icon {
   scale: 1.5;
+}
+
+.signup-header {
+  display: flex;
+  justify-content: center;
+  color: rgb(67, 75, 84);
+  border-bottom: 1px solid rgb(241, 241, 241);
+  padding: 0.5rem;
 }
 
 .navbar {
@@ -156,13 +189,13 @@ footer {
 
 .log-in-2 {
   text-align: center;
-  width: 92%;
-  background-color: #3778c2;
+  width: 90%;
+  background-color: $main;
   color: white;
   border: none;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 20px;
+  margin: 10px 15px;
   font-size: 1.2em;
   text-decoration: none;
   font-weight: 300;
@@ -171,13 +204,13 @@ footer {
 
 .sign-up-2 {
   text-align: center;
-  width: 92%;
-  background-color: #fff;
-  color: $text;
+  width: 90%;
+  background-color: $secondary;
+  color: #fff;
   border: none;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px 20px;
+  margin: 10px 15px;
   font-size: 1.2em;
   text-decoration: none;
   font-weight: 300;
@@ -191,8 +224,7 @@ footer {
 }
 
 .log-in-wrap {
-  margin-left: 10px;
-  padding-left: 5px;
+  margin-left: 5px;
 }
 
 .field {
@@ -202,11 +234,11 @@ footer {
 
 .group-wrap {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 5px auto;
-  width: 90%;
+  background-color: white;
+  border: 1px solid #f1f1f1;
   padding: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
   background-color: transparentize($main, 0.9);
   border-radius: 10px;
 
@@ -218,7 +250,8 @@ footer {
 }
 
 .size {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .group-links {
@@ -228,6 +261,7 @@ footer {
 .group-show-btns {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .btn {
@@ -245,10 +279,22 @@ footer {
 }
 
 .red {
+  font-weight: 300;
   &:hover {
     background-color: #f00;
     cursor: pointer;
   }
+}
+
+.edit {
+  font-weight: 300;
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 10px 15px;
+  background-color: $main;
+  color: #fff;
+  border-radius: 5px;
+  width: 90%;
 }
 
 .transaction-heading {
@@ -333,4 +379,17 @@ footer {
     font-weight: 300;
     margin-bottom: 20px;
   }
+}
+
+.groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.add-group {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }

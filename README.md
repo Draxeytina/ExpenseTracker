@@ -1,11 +1,17 @@
 # Expense Tracker
 A versatile budget application that allows a user to add expenses to a category and consequentially track expenses per category.
 
+![image](https://user-images.githubusercontent.com/59999191/195688621-3afa5630-11db-4e32-aea9-90aa388a653b.png)
+
 ## Built With
 - Ruby
 - Ruby on rails
 
 ## See Project 🌐
+<a href="https://frozen-atoll-99525.herokuapp.com/">Expense Tracker Live Demo</a>
+
+## Demonstration Video
+<a href="https://drive.google.com/file/d/1vyjHmxMyO2qEgNlTB5S5qwbhC2lOJqg8/view?usp=sharing">Expense Tracker Tutorial</a>
 
 ## Getting Started
 You may setup the project on your local machine using the following steps:
